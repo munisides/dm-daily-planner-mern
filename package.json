@@ -1,0 +1,41 @@
+{
+  "name": "dm-daily-planner-mern",
+  "version": "0.1.0",
+  "description": "App to plan daily activities",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/munisides/dm-daily-planner-mern.git"
+  },
+  "author": "Dez Munyeshuli",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node api/server.js",
+    "api": "nodemon api/server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run api\" \"npm run client\"",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "cypress:run:component": "cypress run --component",
+    "test:headless": "npx cypress:run"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "colors": "^1.4.0",
+    "cors": "^2.8.5",
+    "dotenv": "^15.0.1",
+    "express": "^4.18.2",
+    "express-async-handler": "^1.2.0",
+    "express-rate-limit": "^6.6.0",
+    "helmet": "^6.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.6.5",
+    "xss-clean": "^0.1.1"
+  },
+  "devDependencies": {
+    "concurrently": "^7.4.0",
+    "cypress": "^10.10.0",
+    "nodemon": "^2.0.20"
+  }
+}
