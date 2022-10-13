@@ -1,4 +1,3 @@
-// import { join, resolve } from 'path';
 import path from 'path';
 import express from 'express';
 import colors from 'colors';
@@ -27,11 +26,11 @@ app.use(cors());
 app.use(xss());
 app.set('trust proxy', 1);
 
-// const limiter = rateLimiter({
-//     windowMs: 15 * 60 * 1000, // 15 minutes
-//     max: 100, // limit each IP to 100 requests per windowMs
-// });
-// app.use(limiter);
+const limiter = rateLimiter({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 100, // limit each IP to 100 requests per windowMs
+});
+app.use(limiter);
 
 // routes
 app.use('/api/goals', goalRoutes);

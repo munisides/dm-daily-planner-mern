@@ -1,7 +1,3 @@
-// const asyncHandler = require('express-async-handler')
-// const Goal = require('../models/goalModel')
-// const User = require('../models/userModel')
-
 import asyncHandler from 'express-async-handler';
 import Goal from '../models/goalModel.js';
 import User from '../models/userModel.js';
@@ -89,13 +85,6 @@ const deleteGoal = asyncHandler(async (req, res) => {
 
   res.status(200).json({ id: req.params.id })
 })
-
-// module.exports = {
-//   getGoals,
-//   setGoal,
-//   updateGoal,
-//   deleteGoal,
-// }
 
 export {
   getGoals,

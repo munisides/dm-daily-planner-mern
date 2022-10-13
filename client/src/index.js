@@ -1,6 +1,5 @@
 import { createRoot } from 'react-dom/client';
 import React from 'react';
-// import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { store } from './app/store';
@@ -9,7 +8,6 @@ import * as serviceWorker from './serviceWorker';
 
 const container = document.getElementById('app');
 const root = createRoot(container);
-// root.render(<App tab="home" />);
 
 root.render(
   <React.StrictMode>
