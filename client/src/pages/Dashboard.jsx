@@ -23,11 +23,11 @@ const Dashboard = () => {
       navigate("/login");
     }
 
-    // dispatch(getGoals());
+    dispatch(getGoals());
 
-    // return () => {
-    //   dispatch(reset());
-    // };
+    return () => {
+      dispatch(reset());
+    };
   }, [user, navigate, isError, message, dispatch]);
 
   if (isLoading) {
@@ -42,7 +42,7 @@ const Dashboard = () => {
         <>
           <section className="heading">
             <h1>Welcome {user && user.name}</h1>
-            <p>Goals Dashboard</p>
+            <p>Daily Goals Dashboard</p>
           </section>
 
           <GoalForm />

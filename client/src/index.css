@@ -86,10 +86,16 @@ h3 {
   color: #303761;
 }
 
-.goals {
+/* .goals {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
+} */
+
+.goals {
+  display: block;
+  /* grid-template-columns: repeat(2, 1fr);
+  gap: 10px; */
 }
 
 .goal {
@@ -97,6 +103,8 @@ h3 {
   margin: 10px 0;
   padding: 20px 0 10px;
   position: relative;
+  border: 1px solid #f4f4f4;
+  border-radius: 5px;
 }
 
 .goal .close {

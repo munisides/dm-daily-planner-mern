@@ -1,10 +1,8 @@
 import { User } from "../../../api/models/userModel.js";
 
 describe("User Sign-up and Login", function () {
-  beforeEach(function () {
-    // cy.task("db:seed");
-
-    cy.intercept("POST", "/login").as("signup");
+  beforeEach(() => {
+    cy.visit("http://localhost:3000");
   });
 
   it("should redirect unauthenticated user to signin page", function () {
@@ -12,14 +10,14 @@ describe("User Sign-up and Login", function () {
     cy.location("pathname").should("equal", "/login");
   });
 
-  it("should redirect to the home page after login", function () {
+  it("should redirect to the home page after login", () => {
     cy.database("find", "users").then((user) => {
       cy.login(user.username, "s3cret", { rememberUser: true });
     });
     cy.location("pathname").should("equal", "/");
   });
 
-  it("should remember a user for 30 days after login", function () {
+  it("should remember a user for 30 days after login", () => {
     cy.database("find", "users").then((user) => {
       cy.login(user.username, "s3cret", { rememberUser: true });
     });

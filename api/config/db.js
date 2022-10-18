@@ -4,7 +4,7 @@ const connectDB = async () => {
   let conn;
   try {
     if (process.env.NODE_ENV !== "production") {
-      conn = await mongoose.connect("mongodb://localhost:27017/dm-goal-trakcer-api");
+      conn = await mongoose.connect("mongodb://localhost:27017/dm-daily-planner-api");
     } else {
       conn = await mongoose.connect(process.env.MONGO_URI, {
         useUnifiedTopology: true,
